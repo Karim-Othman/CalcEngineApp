@@ -15,6 +15,26 @@ public class MathEquation {
 	public double getRightVar () {return this.rightVar;};
 	public double getResult () {return this.result;};
 	
+	// Creating Constructor that doesn't take any arguments
+	
+	public MathEquation() {
+		
+	}
+	
+	//Creating First Constructor
+	public MathEquation (char operation) {
+		
+		this.operation=operation;
+	}
+	
+	//Creating Second Constructor
+		public MathEquation (char operation, double leftVar, double rightVar) {
+			
+			this(operation);
+			this.leftVar=leftVar;
+			this.rightVar=rightVar;
+		}
+	
 	public double execute () {
 		
 		

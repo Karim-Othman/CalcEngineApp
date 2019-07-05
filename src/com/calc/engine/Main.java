@@ -2,17 +2,19 @@ package com.calc.engine;
 
 public class Main {
 	
-	static MathEquation[] equations = new MathEquation [4];
+	// Without using Constructor
+	
+	static MathEquation[] equations = new MathEquation[5] ;
 	
 	public static void main (String args []) {
 		
-		equations[0] = create(10,5,'a');
-		equations[1] = create(10,5,'s');
-		equations[2] = create(10,5,'m');
-		equations[3] = create(10,5,'d');
+		equations[0] = new MathEquation('a',10.0,5.0);
+		equations[1] = new MathEquation('s',10,5);
+		equations[2] = new MathEquation('m',10,5);
+		equations[3] = new MathEquation('d',10,5);
+		equations[4] = new MathEquation();
 		
 		for (MathEquation equation:equations) {
-			
 			equation.execute();
 			System.out.println(equation.getResult());
 			
@@ -21,15 +23,6 @@ public class Main {
 	
 	
 	
-	public static MathEquation create (double leftVar, double rightVar, char operation) {
-		
-		
-		MathEquation equation = new MathEquation();
-		equation.setLeftVar(leftVar);
-		equation.setOperation(operation);
-		equation.setRightVar(rightVar);
-		
-		return equation;
-	}
+	
 
 }
